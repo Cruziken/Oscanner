@@ -2,49 +2,80 @@ package practice;
 
 import java.io.BufferedWriter;
 import java.io.File;
+/*import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
+import java.io.FileOutputStream;*/
+import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Properties;
+//import java.util.Properties;
+
 
 public class PropsWriter {
 	// Creates a FileWriter variable named fileWriter
-	private FileOutputStream fileOut;
+	/*private FileOutputStream fileOut;
+	private FileInputStream fileIn;
 	// Creates a BufferedWriter variable named buffWriter
 	private File file;
-	private Properties configProperty;
+	private Properties configProperty;*/
+	private FileWriter fileWriter;
+	private BufferedWriter buffWriter;
 
 	public PropsWriter(String filename) {
-		configProperty = new Properties();
-		file = new File(filename);
+		
+			// Creates (or gets access to ) a file from this absolute path
+			File file = new File(filename);
+
+			// In case there is no file to write to...
+			try {
+				// Creates a new FileWriter for that file.
+				// Without the true you write over it. With it, you append
+				fileWriter = new FileWriter(file, true);
+				// Creates an instance buffWriter that writes the content from the
+				// fileWriter
+				buffWriter = new BufferedWriter(fileWriter);
+
+			}
+			// ...do this.
+			catch (IOException e) {
+				// Throws NullPointerException if doesn't work
+				System.out.println("Problem in Writer contructor");
+			}
+		}
+
+	/*	file = new File(filename);
+		try {
+			fileIn= new FileInputStream(file);
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		try {
 			fileOut = new FileOutputStream(file, true);
 		
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
-			System.out.println("Check your constructer");;
-		}
-	}
+			System.out.println("Check your constructer");
+		}*/
+	
 
 	public void propsVars(String projectname) {
+	
 		String keyDescript = "# The project key";
-		String projKey = "sonar.projectKey=my:";
-		String otherDescript = "#name, version, source folder";
-		String projName = "sonar.projectName=My ";
-		String projValue = projectname;
-		String versionKey = "sonar.projectVersion=";
-		String versionVal = "1.0";
-		String sourceKey = "sonar.sources=";
-		String sourceVal = "./src";
+		String projKey = "sonar.projectKey=my:" + projectname;
+		String otherDescript = "# name, version, source folder";
+		String projName = "sonar.projectName=My " + projectname;
+		String projVersion = "sonar.projectVersion=" + "1.0";
+		String projSource = "sonar.sources=./src";
 		propsWriter(keyDescript);
-		propsWriter(projKey, projValue);
+		propsWriter(projKey);
 		propsWriter(otherDescript);
-		propsWriter(projName, projValue);
-		propsWriter(versionKey, versionVal);
-		propsWriter(sourceKey, sourceVal);
+		propsWriter(projName);
+		propsWriter(projVersion);
+		propsWriter(projSource);
+		closeIt();
 	}
 
-	public void propsWriter(String content) {
+	/*public void propsWriter(String content) {
 		byte[] bytesArray = content.getBytes();
 		try {
 			fileOut.write(bytesArray);
@@ -55,19 +86,49 @@ public class PropsWriter {
 			System.out.println("Check your propsWriter(String content) method");
 		}
 		
-	}
+	}*/
 
-	public void propsWriter(String key, String data) {
+	public void propsWriter(String content) {
 
-		configProperty.setProperty(key, data);
-
-		try {
+			// In case no content is there to be read...
+			try {
+				// buffWriter writes content to file passed from other classes
+				buffWriter.write(content);
+				// Each time new content is passed, give it a new line
+				buffWriter.newLine();
+			}
+			// ...do this.
+			catch (IOException e) {
+				// Throws NullPointerException if doesn't work
+				System.out.println("Something wrong happened in log(content)");
+			}
+			// Prints out the content that other classes pass to this method to the
+			// console
+			System.out.println(content);
 			
+		}
+	public void closeIt() {
+		// Closes the buffWriter if there is something to close.
+		try {
+			buffWriter.close();
+		}
+		// If there is nothing to close...
+		catch (IOException e) {
+			// Throws NullPointerException if doesn't work
+			System.out.println("Something wrong happened in closeIt()");
+		}
+
+	}
+		/*try {
+		configProperty = new Properties();
+		configProperty.load(fileIn);
+		configProperty.setProperty(key, data);
+		fileOut= new FileOutputStream(file);	
 			configProperty.store(fileOut, "sample properties");
 			fileOut.close();
 		} catch (IOException e) {
 			System.out.println("File was a dud in PropsWriter");
-
+	*/
 			/**
 			 * Method allows the passing of filenames from other classes.
 			 * Creates a new File and also creates new instances of fileWriter
@@ -76,6 +137,7 @@ public class PropsWriter {
 			 * @param filename
 			 * @return
 			 */
-		}
-	}
 }
+	
+	
+
