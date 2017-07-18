@@ -41,14 +41,14 @@ public class PropsWriter {
 		}
 	}
 
-	public void propsVars(String projectname) {
+	public void propsVars(Variables myVars) {
 
-		String keyDescript = "# The project key";
-		String projKey = "sonar.projectKey=my:" + projectname;
-		String otherDescript = "# name, version, source folder";
-		String projName = "sonar.projectName=My " + projectname;
-		String projVersion = "sonar.projectVersion=" + "1.0";
-		String projSource = "sonar.sources=./src";
+		String keyDescript = myVars.getKeyDescript();
+		String projKey = myVars.getProjKey();
+		String otherDescript = myVars.getOtherDescript();
+		String projName = myVars.getProjName();
+		String projVersion = myVars.getProjSource();
+		String projSource = myVars.getProjSource();
 		propsWriter(keyDescript);
 		propsWriter(projKey);
 		propsWriter(otherDescript);
@@ -91,3 +91,4 @@ public class PropsWriter {
 
 	}
 }
+
