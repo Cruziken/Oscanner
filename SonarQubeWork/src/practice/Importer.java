@@ -11,10 +11,14 @@ public class Importer {
 	//public void impToSq() {
 	public static void main (String[] args){
 		Variables myVari = new Variables();
-		String commands = myVari.getStartCommand();
-		String directory = myVari.getStartDirectory();
-		//myVari.getSendCommand();
-		//myVari.getFileSendDirectory();
+		//myVari.sonarVars();
+		myVari.fileVars("project");
+		//String commands = myVari.getStartCommand();
+		//String commands = myVari.getStartCommand();
+		//String directory = myVari.getStartDirectory();
+		String commands = myVari.getSendCommand();
+		String directory = myVari.getFileSendDirectory();
+		System.out.println(commands);
 		// public void importIt(){
 		// String filena= "CruzCaliber.txt";
 		// AbsolutePather myAbsPather = new AbsolutePather();
@@ -23,14 +27,13 @@ public class Importer {
 		// System.out.println(abspath);
 		//String dir = myAbsPather.getAbsPath(filena);
 		 //Directory if you want to analyze a project must be C://...project
-		 String dir = directory;
-		System.out.println(dir);
+		System.out.println(directory);
 		String[] command = { "CMD", "/C", commands };
 		ProcessBuilder probuilder = new ProcessBuilder(command);
 		probuilder.redirectErrorStream(true);
 		// You can set up your work directory
 		// How to get path from working directory
-		probuilder.directory(new File(dir));
+		probuilder.directory(new File(directory));
 		Process process = null;
 		try {
 			process = probuilder.start();
