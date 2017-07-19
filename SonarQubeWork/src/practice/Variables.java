@@ -13,9 +13,13 @@ public class Variables {
 	private String sendCommand;
 	
 	public void sonarVars(){
+		//Must pass this in at some point
 		 startDirectory = "C:\\Users\\fz3\\SonarQube\\sonarqube-6.4\\sonarqube-6.4\\bin\\windows-x86-64";
+		 //Must pass this in at some point
 		 fileSendDirectory = "C:\\Users\\fz3\\workspace\\FizzBuzz";
+		 //This is always this
 		 startCommand = "StartSonar.bat";
+		 //This is always this
 		 sendCommand = "sonar-scanner";
 	}
 	
