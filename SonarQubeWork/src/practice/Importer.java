@@ -7,10 +7,10 @@ public class Importer {
 		AbsolutePather myAbsPather = new AbsolutePather();
 		if (filena!=null){
 		String abspath= myAbsPather.getAbsPath(filena);
-		  String[] command = {"CMD", "/C", "dir"};
+		  String[] command = {"CMD", "/C", "sonar-scanner"};
 	        ProcessBuilder probuilder = new ProcessBuilder( command );
 	        //You can set up your work directory
-	        probuilder.directory(new File(abspath));
+	        //probuilder.directory(new File(abspath));
 	        
 	        Process process = null;
 			try {
