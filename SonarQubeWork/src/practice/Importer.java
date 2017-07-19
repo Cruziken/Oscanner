@@ -11,8 +11,8 @@ public class Importer {
 	//public void impToSq() {
 	public static void main (String[] args){
 		Variables myVari = new Variables();
-		//myVari.sonarVars();
-		myVari.fileVars("project");
+		myVari.sonarVars();
+		//myVari.fileVars("project");
 		//String commands = myVari.getStartCommand();
 		//String commands = myVari.getStartCommand();
 		//String directory = myVari.getStartDirectory();
