@@ -5,7 +5,7 @@ public class SonarQube {
 		PropsWriter myPropsWriter = new PropsWriter("sonar-project.properties");
 		Variables myVariables = new Variables();
 		// PullWithGit myPWG = new PullWithGit();
-		myVariables.vars("sonarqubework");
+		myVariables.fileVars("sonarqubework");
 		myPropsWriter.propsVars(myVariables);
 	}
 }
