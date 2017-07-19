@@ -1,7 +1,13 @@
 package practice;
-//import org.eclipse.jgit.api.Git;
+import java.io.File;
+
+
 public class PullWithGit {
 	public void pull(){
-		//Git git = org.eclipse.jgit.api.Git.open(new File("/path/to/.git"));
+		//FileRepositoryBuilder builder = new FileRepositoryBuilder();
+		//Repository repository = builder.setGitDir(new File("/my/git/directory"))
+		//  .readEnvironment() // scan environment GIT_* variables
+		//  .findGitDir() // scan up the file system tree
+		//  .build();
 	}
 }
