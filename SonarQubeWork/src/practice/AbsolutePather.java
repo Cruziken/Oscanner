@@ -1,6 +1,7 @@
 package practice;
 
 import java.io.File;
+import java.io.IOException;
 
 public class AbsolutePather {
 
@@ -12,7 +13,7 @@ public class AbsolutePather {
 		 * @return
 		 */
 		public String getAbsPath(String filename) {
-
+			/*
 			// Creates a string called path that'll house our absolute file name
 			String path = "";
 			// Creates a boolean bool which is true
@@ -28,8 +29,8 @@ public class AbsolutePather {
 				// if file exists
 				if (bool) {
 					// get absolute path
-					path = file.getAbsolutePath();
-				}
+					path = file.getParent();
+				} 
 
 			}
 			// Catch the exception
@@ -39,7 +40,21 @@ public class AbsolutePather {
 				System.out.println("Absolute path went rouge");
 			}
 			// Return the absolute path of the filename
-			return path;
-		}
+			return path;  */
+			
+
+	    	    File file = new File(filename);
+
+	    	    String absolutePath = file.getAbsolutePath();
+	    	    System.out.println("File path : " + absolutePath);
+
+	    	    String filePath = absolutePath.
+	    	    	     substring(0,absolutePath.lastIndexOf(File.separator));
+	    	    System.out.println(filePath);
+	    	    return filePath;
+
+	    
+
+	    	}
 	}
 
