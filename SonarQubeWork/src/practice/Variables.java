@@ -13,7 +13,7 @@ public class Variables {
 	private String sendCommand;
 	
 	public void sonarVars(){
-		 startDirectory = "C:\\Users\\fz3\\SonarQube\\sonarqube-6.4\\sonarqube-6.4";
+		 startDirectory = "C:\\Users\\fz3\\SonarQube\\sonarqube-6.4\\sonarqube-6.4\\bin\\windows-x86-64";
 		 fileSendDirectory = "C:\\Users\\fz3\\FizzBuzz";
 		 startCommand = "StartSonar.bat";
 		 sendCommand = "sonar-scanner";
