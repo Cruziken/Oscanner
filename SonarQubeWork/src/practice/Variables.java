@@ -7,8 +7,21 @@ public class Variables {
 	private String projName;
 	private String projVersion;
 	private String projSource;
-
-	public void vars(String projectname) {
+	private String startDirectory;
+	private String fileSendDirectory;
+	private String startCommand;
+	private String sendCommand;
+	
+	public void sonarVars(){
+		 startDirectory = "C:\\Users\\fz3\\SonarQube\\sonarqube-6.4\\sonarqube-6.4";
+		 fileSendDirectory = "C:\\Users\\fz3\\FizzBuzz";
+		 startCommand = "StartSonar.bat";
+		 sendCommand = "sonar-scanner";
+	}
+	
+	
+	
+	public void fileVars(String projectname) {
 		keyDescript = "# The project key";
 		projKey = "sonar.projectKey=my:" + projectname;
 		otherDescript = "# name, version, source folder";
@@ -39,5 +52,20 @@ public class Variables {
 
 	public String getProjSource() {
 		return projSource;
+	}
+	public String getStartDirectory(){
+		return startDirectory;
+	}
+	
+	public String getFileSendDirectory(){
+		return fileSendDirectory;
+	}
+	
+	public String getStartCommand(){
+		return startCommand;
+	}
+	
+	public String getSendCommand(){
+		return sendCommand;
 	}
 }
