@@ -8,19 +8,34 @@ package practice;
  */
 public class SonarQube {
 	// This is the localpath where the remote Repository will be cloned to
-	private final static String localRepo = "C:\\Users\\fz3\\SonarQube\\TheClone3";
+	private static String localRepo = null;
 	// This is the remoteRepo URL; what will be cloned
-	private final static String remoteRepo = "https://github.com/Cruziken/SonarQube-Practice.git";
+	private static String remoteRepo = null;
 	// This is projectName for the project
-	private final static String projectName = "sonarqubework";
+	private static String projectName = null;
 	// This is the name of the properties file. Should not change
-	private final static String filename = "sonar-project.properties";
+	private static String filename = null;
 	// This is the name of the source in the project
-	private final static String source = "./SonarQubeWork/src";
+	private static String source = null;
 
 	/**
 	 * This method starts the process
 	 */
+	public static void myValues() {
+		Prompter myPrompter = new Prompter();
+		// Example: "C:\\Users\\fz3\\SonarQube\\TheClone"
+		localRepo = myPrompter.scanIt("localRepo");
+		// Example: "https://github.com/Cruziken/SonarQube-Practice.git"
+		remoteRepo = myPrompter.scanIt("remoteRepo");
+		// Example: sonarqubewoek
+		projectName = myPrompter.scanIt("projectName");
+		// Example: "sonar-project.properties"
+		filename = myPrompter.scanIt("filename");
+		// Example: ./SonarQubeWork/src
+		source = myPrompter.scanIt("source");
+
+	}
+
 	public static void startIt() {
 		// Creates an instance of AllGit and passes the localpath and the remote
 		// URL to it
