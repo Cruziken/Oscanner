@@ -9,16 +9,23 @@ import java.io.FileWriter;
 import java.io.IOException;
 //import java.util.Properties;
 
+/**
+ * This method writes content passed to it to a file
+ * 
+ * @author fz3
+ *
+ */
 public class PropsWriter {
 	// Creates a FileWriter variable named fileWriter
-	/*
-	 * private FileOutputStream fileOut; private FileInputStream fileIn; //
-	 * Creates a BufferedWriter variable named buffWriter private File file;
-	 * private Properties configProperty;
-	 */
 	private FileWriter fileWriter;
+	// Creates a BufferedWriter named buffWriter
 	private BufferedWriter buffWriter;
 
+	/**
+	 * This method takes in a file and intializes the fileWriter and buffWriter
+	 * 
+	 * @param filename
+	 */
 	public PropsWriter(String filename) {
 
 		// Creates (or gets access to ) a file from this absolute path
@@ -36,28 +43,53 @@ public class PropsWriter {
 		}
 		// ...do this.
 		catch (IOException e) {
-			// Throws NullPointerException if doesn't work
+			// Say this is something happens
 			System.out.println("Problem in Writer contructor");
 		}
 	}
 
+	/**
+	 * This method retrieves content for sonar-properties file and has them
+	 * passed to be written to new file
+	 * 
+	 * @param myVars
+	 */
 	public void propsVars(Variables myVars) {
-
+		// Gets the value assigned to keyDescript
 		String keyDescript = myVars.getKeyDescript();
+		// Gets the value assigned to projKey
 		String projKey = myVars.getProjKey();
+		// Gets the value assigned to otherDescript
 		String otherDescript = myVars.getOtherDescript();
+		// Gets the value assigned to projName
 		String projName = myVars.getProjName();
+		// Gets the value assigned to projVersion
 		String projVersion = myVars.getProjSource();
+		// Gets the value assigned to projSource
 		String projSource = myVars.getProjSource();
+		// Passes keyDescript to be written to file
 		propsWriter(keyDescript);
+		// Passes projKey to be written to file
 		propsWriter(projKey);
+		// Passes otherDescript to be written to file
 		propsWriter(otherDescript);
+		// Passes projName to be written to file
 		propsWriter(projName);
+		// Passes projVersion to be written to file
 		propsWriter(projVersion);
+		// Passes projSource to be written to file
 		propsWriter(projSource);
+		// Close the FileWriter
 		closeIt();
 	}
 
+	/**
+	 * Method allows content to be passed into it when accessed by other classes
+	 * and methods. This content is then written out to a file and also the
+	 * console
+	 * 
+	 * @param content
+	 */
 	public void propsWriter(String content) {
 
 		// In case no content is there to be read...
@@ -78,6 +110,9 @@ public class PropsWriter {
 
 	}
 
+	/**
+	 * Method closes any implementation of the buffWriter
+	 */
 	public void closeIt() {
 		// Closes the buffWriter if there is something to close.
 		try {
@@ -91,4 +126,3 @@ public class PropsWriter {
 
 	}
 }
-

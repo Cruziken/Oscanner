@@ -166,4 +166,11 @@ public class AllGit {
 			System.out.println("Something went wrong in testPull");
 		}
 	}
+	/**
+	 * Method that Closes repository
+	 */
+	public void closeRepo(){
+		//closes the localRepo
+		localRepo.close();
+	}
 }
