@@ -23,7 +23,7 @@ public class Prompter {
 	public String scanIt(String value) {
 		// Print out the prompt for the user
 		System.out.println("Please enter the value for " + value + ".");
-		// Creates an instance of Scanner named input.
+		// Creates an instance of Scanner named scanner.
 		// Assigns the scanner whatever value is inputed
 		scanner = new Scanner(System.in);
 		{
