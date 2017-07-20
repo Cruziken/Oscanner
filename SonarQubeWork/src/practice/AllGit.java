@@ -23,15 +23,14 @@ public class AllGit {
 	 */
 
 	public AllGit(String localPathValue, String remotePathValue) {
-		// Assigns the localPath a value. May have to passed in from main class
-		// when SonarQube work is made into a Maven project
+		// Assigns the localPath the value passed in
 		localPath = localPathValue;
 		// Assigns the remotePath a value. May have to passed in from main class
 		// when SonarQube work is made into a Maven project
 		remotePath = remotePathValue;
 		// In case localPath is null...
 		try {
-			// Assigns the localRepo a value defined by localPath
+			// Assigns the localRepo the value passed in
 			localRepo = new FileRepository(localPath + "/.git");
 		}
 		// Print off the following statement
