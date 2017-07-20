@@ -16,11 +16,11 @@ public class Variables {
 	 * This method contains the commands and directory values to run through
 	 * command prompt
 	 */
-	public void sonarVars() {
+	public void sonarVars(String localRepoValue) {
 		// Must pass this in at some point
 		startDirectory = "C:\\Users\\fz3\\SonarQube\\sonarqube-6.4\\sonarqube-6.4\\bin\\windows-x86-64";
 		// Must pass this in at some point
-		fileSendDirectory = "C:\\Users\\fz3\\git\\SonarQube-Practice\\SonarQubeWork";
+		fileSendDirectory = localRepoValue;
 		// This is always this
 		startCommand = "StartSonar.bat";
 		// This is always this

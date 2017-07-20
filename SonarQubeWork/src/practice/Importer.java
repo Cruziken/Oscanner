@@ -28,7 +28,7 @@ public class Importer {
 	public void setVars(Variables myVari) {
 		
 		// Calls the sonarVars to get acces to its methods
-		myVari.sonarVars();
+		//myVari.sonarVars();
 		// gets the commands it needs from Variables
 		 commands = myVari.getStartCommand();
 		// gets the directory to start commands from
