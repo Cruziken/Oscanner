@@ -20,7 +20,7 @@ public class Variables {
 		// Must pass this in at some point
 		startDirectory = "C:\\Users\\fz3\\SonarQube\\sonarqube-6.4\\sonarqube-6.4\\bin\\windows-x86-64";
 		// Must pass this in at some point
-		fileSendDirectory = "C:\\Users\\fz3\\git\\SonarQube-Practice\\SonarQubeWork\\src";
+		fileSendDirectory = "C:\\Users\\fz3\\git\\SonarQube-Practice\\SonarQubeWork";
 		// This is always this
 		startCommand = "StartSonar.bat";
 		// This is always this

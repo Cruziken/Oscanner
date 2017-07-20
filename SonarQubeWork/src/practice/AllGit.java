@@ -93,6 +93,7 @@ public class AllGit {
 			myfile.createNewFile();
 			// Adds the new file to the localrepo
 			git.add().addFilepattern("/CruzCaliber.txt").call();
+
 		}
 		// Print off the following statement
 		catch (GitAPIException | IOException e) {
@@ -121,56 +122,59 @@ public class AllGit {
 	 * This method pushes changes in local repository up to remote one
 	 */
 	public void pushIt() {
-		//In case the git is a dud
+		// In case the git is a dud
 		try {
-			//Push it to the limit!
+			// Push it to the limit!
 			git.push().call();
-		} 
-		//...print the following statement
+		}
+		// ...print the following statement
 		catch (GitAPIException e) {
 			// Inform if something went wrong in this method
 			System.out.println("Something went wrong in pushIt");
 		}
 	}
+
 	/**
 	 * Tracks the master branch
 	 */
 	public void trackMaster() {
-		//In case git is a dud...
+		// In case git is a dud...
 		try {
-			//Creates tracking master
+			// Creates tracking master
 			git.branchCreate().setName("master").setUpstreamMode(SetupUpstreamMode.SET_UPSTREAM)
 					.setStartPoint("origin/master").setForce(true).call();
-			//Prints out what details of branch tracking
-			 System.out.println("Now tracking master in repository at " + localRepo.getDirectory() + " from origin/master at " +
-		                remotePath);
-		} 
-		//...print off the following statement
+			// Prints out what details of branch tracking
+			System.out.println("Now tracking master in repository at " + localRepo.getDirectory()
+					+ " from origin/master at " + remotePath);
+		}
+		// ...print off the following statement
 		catch (GitAPIException e) {
 			// Inform that something went wrong in trackMaster
 			System.out.println("Something went wrong in trackMaster");
 		}
 	}
+
 	/**
 	 * Method pulls from remote repository
 	 */
 	public void testPull() {
-		//In case Git is a dud
+		// In case Git is a dud
 		try {
-			//Pull it to the limit!...?
+			// Pull it to the limit!...?
 			git.pull().call();
-		} 
-		//...print off the following statement
+		}
+		// ...print off the following statement
 		catch (GitAPIException e) {
 			// Inform that something went wrong in testPull
 			System.out.println("Something went wrong in testPull");
 		}
 	}
+
 	/**
 	 * Method that Closes repository
 	 */
-	public void closeRepo(){
-		//closes the localRepo
+	public void closeRepo() {
+		// closes the localRepo
 		localRepo.close();
 	}
 }
