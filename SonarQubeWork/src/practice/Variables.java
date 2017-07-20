@@ -31,7 +31,7 @@ public class Variables {
 	 * This method contains the values for the desired content to send to
 	 * sonar-properties file
 	 */
-	public void fileVars(String projectname) {
+	public void fileVars(String projectname, String source) {
 		// Assigns the value of keyDescript
 		keyDescript = "# The project key";
 		// Assigns the value of projKey
@@ -43,7 +43,7 @@ public class Variables {
 		// Assigns the value of projVersion
 		projVersion = "sonar.projectVersion=" + "1.0";
 		// Assigns the value of projSource
-		projSource = "sonar.sources=./src";
+		projSource = "sonar.sources=" + source;
 	}
 
 	/**

@@ -8,13 +8,14 @@ package practice;
  */
 public class SonarQube {
 	// This is the localpath where the remote Repository will be cloned to
-	private final static String localRepo = "C:\\Users\\fz3\\SonarQube\\TheClone4";
+	private final static String localRepo = "C:\\Users\\fz3\\SonarQube\\TheClone1";
 	// This is the remoteRepo URL; what will be cloned
 	private final static String remoteRepo = "https://github.com/Cruziken/SonarQube-Practice.git";
 	// This is projectName for the project
 	private final static String projectName = "sonarqubework";
 	// This is the name of the properties file. Should not change
 	private final static String filename = "sonar-project.properties";
+	private final static String source = "./SonarQubeWork/src";
 
 	/**
 	 * This method starts the process
@@ -37,7 +38,7 @@ public class SonarQube {
 		myVariables.sonarVars(localRepo);
 		// Calls the fileVars method on myVariables. Sets the contents of the
 		// properties file
-		myVariables.fileVars(projectName);
+		myVariables.fileVars(projectName, source);
 		// Gets the values from Varibles to print to the properties file
 		myPropsWriter.propsVars(myVariables);
 		// Gets the directory and command from myVariables class

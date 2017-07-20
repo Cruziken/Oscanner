@@ -29,7 +29,7 @@ public class PropsWriter {
 	public PropsWriter(String filename, String localPath) {
 
 		// Creates (or gets access to ) a file from this absolute path
-		File file = new File(localPath + filename);
+		File file = new File(localPath + "\\" + filename);
 
 		// In case there is no file to write to...
 		try {
