@@ -15,6 +15,7 @@ public class SonarQube {
 	private final static String projectName = "sonarqubework";
 	// This is the name of the properties file. Should not change
 	private final static String filename = "sonar-project.properties";
+	// This is the name of the source in the project
 	private final static String source = "./SonarQubeWork/src";
 
 	/**
@@ -48,12 +49,14 @@ public class SonarQube {
 		myCommander.commandPrompt();
 
 	}
+
 	/**
 	 * The main method is where the program looks to begin
+	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		//Calls the startIt() method
+		// Calls the startIt() method
 		startIt();
 	}
 }
