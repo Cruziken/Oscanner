@@ -10,7 +10,7 @@ import java.util.Arrays;
  * This class runs command prompt arguments
  */
 
-public class Importer {
+public class Commander {
 	// Creates a Process instance called process
 	private Process process;
 	// Creates String variables commands and directory
