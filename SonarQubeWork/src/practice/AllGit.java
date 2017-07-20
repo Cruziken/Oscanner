@@ -21,6 +21,20 @@ public class AllGit {
 	 * This method Initializes the localPath and remotePath variables, the
 	 * localRepo, and the Git instance
 	 */
+	public static void main(String[] args) {
+		AllGit myGit = new AllGit();
+		myGit.initialize();
+		// myGit.createLocRepo();
+		// myGit.createClone();
+		// myGit.createLocRepo();
+		myGit.addFile();
+		myGit.trackMaster();
+		// myGit.addComments();
+		// myGit.testPull();
+		myGit.pushIt();
+
+	}
+
 	public void initialize() {
 		// Assigns the localPath a value. May have to passed in from main class
 		// when SonarQube work is made into a Maven project
@@ -43,7 +57,8 @@ public class AllGit {
 	}
 
 	/**
-	 * This method creates a new local repository
+	 * This method creates a new local repository. Creates it but through
+	 * BareRepository error
 	 */
 	public void createLocRepo() {
 		// The new local Repository that will be created
