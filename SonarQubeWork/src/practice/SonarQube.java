@@ -8,7 +8,7 @@ package practice;
  */
 public class SonarQube {
 	// This is the localpath where the remote Repository will be cloned to
-	private final static String localRepo = "C:\\Users\\fz3\\SonarQube\\TheClone4";
+	private final static String localRepo = "C:\\Users\\fz3\\SonarQube\\TheClone3";
 	// This is the remoteRepo URL; what will be cloned
 	private final static String remoteRepo = "https://github.com/Cruziken/SonarQube-Practice.git";
 	// This is projectName for the project
