@@ -35,7 +35,7 @@ public class PropsWriter {
 		try {
 			// Creates a new FileWriter for that file.
 			// Without the true you write over it. With it, you append
-			fileWriter = new FileWriter(file, true);
+			fileWriter = new FileWriter(file);
 			// Creates an instance buffWriter that writes the content from the
 			// fileWriter
 			buffWriter = new BufferedWriter(fileWriter);

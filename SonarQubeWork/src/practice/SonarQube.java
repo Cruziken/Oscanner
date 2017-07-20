@@ -8,11 +8,11 @@ package practice;
  */
 public class SonarQube {
 	// This is the localpath where the remote Repository will be cloned to
-	private final static String localRepo = "C:\\Users\\fz3\\SonarQube\\TheClone";
+	private final static String localRepo = "C:\\Users\\fz3\\SonarQube\\TheClone4";
 	// This is the remoteRepo URL; what will be cloned
-	private final static String remoteRepo = "https://github.com/Cruziken/CruzikenPractice.git";
+	private final static String remoteRepo = "https://github.com/Cruziken/SonarQube-Practice.git";
 	// This is projectName for the project
-	private final static String projectName = "CruzikenPractice";
+	private final static String projectName = "sonarqubework";
 	// This is the name of the properties file. Should not change
 	private final static String filename = "sonar-project.properties";
 
