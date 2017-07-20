@@ -16,23 +16,18 @@ public class Commander {
 	// Creates String variables commands and directory
 	private String commands, directory;
 
-	/*public static void main(String[] args) {
-		Importer myImp = new Importer();
-		myImp.setVars();
-		myImp.commandPrompt(); }
-	 */
-
 	/**
-	 * This method sets the Variables
+	 * This method sets the Variables. Note that commented out section contain
+	 * calls to get command and directory to start SonarQube for Variables
 	 */
 	public void setVars(Variables myVari) {
-		
+
 		// Calls the sonarVars to get acces to its methods
-		//myVari.sonarVars();
+		// myVari.sonarVars();
 		// gets the commands it needs from Variables
-		//commands = myVari.getStartCommand();
+		// commands = myVari.getStartCommand();
 		// gets the directory to start commands from
-		 //directory = myVari.getStartDirectory();
+		// directory = myVari.getStartDirectory();
 		// gets the commands it needs from Variables
 		commands = myVari.getSendCommand();
 		// gets the directory to start commands from
