@@ -31,6 +31,8 @@ public class SonarQube {
 		projectName = myPrompter.scanIt(" the projectName");
 		// Example: ./SonarQubeWork/src
 		source = myPrompter.scanIt(" the source of the files you wish to scan");
+		
+		myPrompter.closeIt();
 
 	}
 
