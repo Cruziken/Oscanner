@@ -72,6 +72,7 @@ public class SonarQube {
 	 */
 	public static void main(String[] args) {
 		// Calls the startIt() method
+		myValues();
 		startIt();
 	}
 }
