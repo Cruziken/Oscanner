@@ -21,19 +21,6 @@ public class AllGit {
 	 * This method Initializes the localPath and remotePath variables, the
 	 * localRepo, and the Git instance
 	 */
-	/*public static void main(String[] args) {
-		AllGit myGit = new AllGit();
-		myGit.initialize();
-		// myGit.createLocRepo();
-		myGit.createClone();
-		// myGit.createLocRepo();
-		// myGit.addFile();
-		myGit.trackMaster();
-		// myGit.addComments();
-		// myGit.testPull();
-		// myGit.pushIt(); 
-		
-	}*/
 
 	public AllGit(String localPathValue, String remotePathValue) {
 		// Assigns the localPath a value. May have to passed in from main class
