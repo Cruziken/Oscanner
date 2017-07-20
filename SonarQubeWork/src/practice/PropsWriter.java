@@ -64,7 +64,7 @@ public class PropsWriter {
 		// Gets the value assigned to projName
 		String projName = myVars.getProjName();
 		// Gets the value assigned to projVersion
-		String projVersion = myVars.getProjSource();
+		String projVersion = myVars.getProjVersion();
 		// Gets the value assigned to projSource
 		String projSource = myVars.getProjSource();
 		// Passes keyDescript to be written to file
