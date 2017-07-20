@@ -92,6 +92,7 @@ public class AllGit {
 		try {
 			// Create the new file
 			if (!myfile.createNewFile()) {
+				//Prints this out if new file is not created
 				System.out.println("Bad stuff in addFile");
 			}
 			// Adds the new file to the localrepo
