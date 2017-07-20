@@ -25,13 +25,13 @@ public class AllGit {
 		AllGit myGit = new AllGit();
 		myGit.initialize();
 		// myGit.createLocRepo();
-		// myGit.createClone();
+		myGit.createClone();
 		// myGit.createLocRepo();
-		myGit.addFile();
+		// myGit.addFile();
 		myGit.trackMaster();
 		// myGit.addComments();
 		// myGit.testPull();
-		myGit.pushIt();
+		// myGit.pushIt();
 
 	}
 
