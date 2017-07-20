@@ -16,28 +16,27 @@ public class Importer {
 	// Creates String variables commands and directory
 	private String commands, directory;
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		Importer myImp = new Importer();
 		myImp.setVars();
-		myImp.commandPrompt();
-	}
+		myImp.commandPrompt(); }
+	 */
 
 	/**
 	 * This method sets the Variables
 	 */
-	public void setVars() {
-		// Creates an instance of Variables named myVari
-		Variables myVari = new Variables();
+	public void setVars(Variables myVari) {
+		
 		// Calls the sonarVars to get acces to its methods
 		myVari.sonarVars();
 		// gets the commands it needs from Variables
-		// commands = myVari.getStartCommand();
+		 commands = myVari.getStartCommand();
 		// gets the directory to start commands from
-		// directory = myVari.getStartDirectory();
+		 directory = myVari.getStartDirectory();
 		// gets the commands it needs from Variables
-		commands = myVari.getSendCommand();
+		//commands = myVari.getSendCommand();
 		// gets the directory to start commands from
-		directory = myVari.getFileSendDirectory();
+		//directory = myVari.getFileSendDirectory();
 		// Prints out the commands
 		System.out.println(commands);
 		// Prints out the directory

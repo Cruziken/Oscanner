@@ -21,7 +21,7 @@ public class AllGit {
 	 * This method Initializes the localPath and remotePath variables, the
 	 * localRepo, and the Git instance
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		AllGit myGit = new AllGit();
 		myGit.initialize();
 		// myGit.createLocRepo();
@@ -31,17 +31,17 @@ public class AllGit {
 		myGit.trackMaster();
 		// myGit.addComments();
 		// myGit.testPull();
-		// myGit.pushIt();
+		// myGit.pushIt(); 
+		
+	}*/
 
-	}
-
-	public void initialize() {
+	public AllGit(String localPathValue, String remotePathValue) {
 		// Assigns the localPath a value. May have to passed in from main class
 		// when SonarQube work is made into a Maven project
-		localPath = "C:\\Users\\fz3\\SonarQube\\TheClone";
+		localPath = localPathValue;
 		// Assigns the remotePath a value. May have to passed in from main class
 		// when SonarQube work is made into a Maven project
-		remotePath = "https://github.com/Cruziken/SonarQube.git";
+		remotePath = remotePathValue;
 		// In case localPath is null...
 		try {
 			// Assigns the localRepo a value defined by localPath
