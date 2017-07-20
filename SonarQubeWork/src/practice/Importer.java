@@ -11,13 +11,15 @@ import java.util.Arrays;
  */
 
 public class Importer {
-	//Creates a Process instance called process
+	// Creates a Process instance called process
 	private Process process;
-	//Creates String variables commands and directory 
+	// Creates String variables commands and directory
 	private String commands, directory;
 
 	public static void main(String[] args) {
-
+		Importer myImp = new Importer();
+		myImp.setVars();
+		myImp.commandPrompt();
 	}
 
 	/**
@@ -29,13 +31,13 @@ public class Importer {
 		// Calls the sonarVars to get acces to its methods
 		myVari.sonarVars();
 		// gets the commands it needs from Variables
-		commands = myVari.getStartCommand();
+		// commands = myVari.getStartCommand();
 		// gets the directory to start commands from
-		directory = myVari.getStartDirectory();
+		// directory = myVari.getStartDirectory();
 		// gets the commands it needs from Variables
-		// String commands = myVari.getSendCommand();
+		commands = myVari.getSendCommand();
 		// gets the directory to start commands from
-		// String directory = myVari.getFileSendDirectory();
+		directory = myVari.getFileSendDirectory();
 		// Prints out the commands
 		System.out.println(commands);
 		// Prints out the directory
@@ -96,6 +98,7 @@ public class Importer {
 				int exitValue = process.waitFor();
 				System.out.println("\n\nExit Value is " + exitValue);
 			}
+			br.close();
 		}
 		// ...print the followng statement if something goes wrong
 		catch (IOException | InterruptedException e1) {
@@ -103,4 +106,5 @@ public class Importer {
 			System.out.println("Something went wrong in sendToConsole");
 		}
 	}
+
 }
