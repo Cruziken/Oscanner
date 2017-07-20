@@ -11,7 +11,9 @@ import java.util.Arrays;
  */
 
 public class Importer {
+	//Creates a Process instance called process
 	private Process process;
+	//Creates String variables commands and directory 
 	private String commands, directory;
 
 	public static void main(String[] args) {
