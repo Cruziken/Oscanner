@@ -30,13 +30,13 @@ public class Importer {
 		// Calls the sonarVars to get acces to its methods
 		//myVari.sonarVars();
 		// gets the commands it needs from Variables
-		 commands = myVari.getStartCommand();
+		//commands = myVari.getStartCommand();
 		// gets the directory to start commands from
-		 directory = myVari.getStartDirectory();
+		 //directory = myVari.getStartDirectory();
 		// gets the commands it needs from Variables
-		//commands = myVari.getSendCommand();
+		commands = myVari.getSendCommand();
 		// gets the directory to start commands from
-		//directory = myVari.getFileSendDirectory();
+		directory = myVari.getFileSendDirectory();
 		// Prints out the commands
 		System.out.println(commands);
 		// Prints out the directory
