@@ -1,9 +1,7 @@
 package practice;
 
-
 import java.io.File;
 import java.io.IOException;
-
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.CreateBranchCommand.SetupUpstreamMode;
 import org.eclipse.jgit.api.errors.GitAPIException;
@@ -38,7 +36,7 @@ public class AllGit {
 		// Print off the following statement
 		catch (IOException e) {
 			// Let us know that error occured here
-			System.out.println("Something happened in method init");
+			System.out.println("Something happened in method initialize");
 		}
 		// Assign git the value of the new repo
 		git = new Git(localRepo);
@@ -60,7 +58,7 @@ public class AllGit {
 		// Print the following statement
 		catch (IOException e) {
 			// Let us know that error occured here
-			System.out.println("Something happened in testCreate");
+			System.out.println("Something happened in createLocRepo");
 		}
 	}
 
@@ -78,7 +76,7 @@ public class AllGit {
 		// ...Print out the following statement
 		catch (GitAPIException e) {
 			// Let someone know error occured here
-			System.out.println("Something happened in testClone");
+			System.out.println("Something happened in createClone");
 		}
 	}
 
@@ -94,44 +92,78 @@ public class AllGit {
 			// Create the new file
 			myfile.createNewFile();
 			// Adds the new file to the localrepo
-			git.add().addFilepattern("myfile").call();
+			git.add().addFilepattern("/CruzCaliber.txt").call();
 		}
 		// Print off the following statement
 		catch (GitAPIException | IOException e) {
 			// Inform something went wrong in this method
-			System.out.println("Something went wrong in testAdd");
+			System.out.println("Something went wrong in addFile");
 		}
 	}
 
-	public void testCommit() {
+	/**
+	 * This method adds a comment to a push or added file
+	 */
+	public void addComments() {
+		// In case the Git is a dud
 		try {
+			// Add the comment to the git
 			git.commit().setMessage("Added myfile").call();
-		} catch (GitAPIException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		}
+		// ...print the following command
+		catch (GitAPIException e) {
+			// Inform something went wrong with the commit
+			System.out.println("Something went wrong in addComments");
 		}
 	}
 
-	public void testPush() {
+	/**
+	 * This method pushes changes in local repository up to remote one
+	 */
+	public void pushIt() {
+		//In case the git is a dud
 		try {
+			//Push it to the limit!
 			git.push().call();
-		} catch (GitAPIException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		} 
+		//...print the following statement
+		catch (GitAPIException e) {
+			// Inform if something went wrong in this method
+			System.out.println("Something went wrong in pushIt");
 		}
 	}
-
-	public void testTrackMaster() {
+	/**
+	 * Tracks the master branch
+	 */
+	public void trackMaster() {
+		//In case git is a dud...
 		try {
+			//Creates tracking master
 			git.branchCreate().setName("master").setUpstreamMode(SetupUpstreamMode.SET_UPSTREAM)
 					.setStartPoint("origin/master").setForce(true).call();
-		} catch (GitAPIException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//Prints out what details of branch tracking
+			 System.out.println("Now tracking master in repository at " + localRepo.getDirectory() + " from origin/master at " +
+		                remotePath);
+		} 
+		//...print off the following statement
+		catch (GitAPIException e) {
+			// Inform that something went wrong in trackMaster
+			System.out.println("Something went wrong in trackMaster");
 		}
 	}
-
-	public void testPull() throws IOException, GitAPIException {
-		git.pull().call();
+	/**
+	 * Method pulls from remote repository
+	 */
+	public void testPull() {
+		//In case Git is a dud
+		try {
+			//Pull it to the limit!...?
+			git.pull().call();
+		} 
+		//...print off the following statement
+		catch (GitAPIException e) {
+			// Inform that something went wrong in testPull
+			System.out.println("Something went wrong in testPull");
+		}
 	}
 }
