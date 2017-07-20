@@ -11,6 +11,7 @@ public class Variables {
 	private String fileSendDirectory;
 	private String startCommand;
 	private String sendCommand;
+
 	
 	public void sonarVars(){
 		//Must pass this in at some point

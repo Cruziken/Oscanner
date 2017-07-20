@@ -13,11 +13,10 @@ public class Importer {
 		Variables myVari = new Variables();
 		myVari.sonarVars();
 		//myVari.fileVars("project");
-		//String commands = myVari.getStartCommand();
-		//String commands = myVari.getStartCommand();
-		//String directory = myVari.getStartDirectory();
-		String commands = myVari.getSendCommand();
-		String directory = myVari.getFileSendDirectory();
+		String commands = myVari.getStartCommand();
+		String directory = myVari.getStartDirectory();
+		//String commands = myVari.getSendCommand();
+		//String directory = myVari.getFileSendDirectory();
 		System.out.println(commands);
 		// public void importIt(){
 		// String filena= "CruzCaliber.txt";
