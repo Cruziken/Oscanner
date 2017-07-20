@@ -14,7 +14,7 @@ public class SonarQube {
 	// This is projectName for the project
 	private static String projectName = null;
 	// This is the name of the properties file. Should not change
-	private static String filename = null;
+	private static final String filename = "sonar-project.properties";
 	// This is the name of the source in the project
 	private static String source = null;
 
@@ -24,15 +24,13 @@ public class SonarQube {
 	public static void myValues() {
 		Prompter myPrompter = new Prompter();
 		// Example: "C:\\Users\\fz3\\SonarQube\\TheClone"
-		localRepo = myPrompter.scanIt("localRepo");
+		localRepo = myPrompter.scanIt("local path for cloned repository");
 		// Example: "https://github.com/Cruziken/SonarQube-Practice.git"
-		remoteRepo = myPrompter.scanIt("remoteRepo");
+		remoteRepo = myPrompter.scanIt("remote URL for remote repository");
 		// Example: sonarqubewoek
-		projectName = myPrompter.scanIt("projectName");
-		// Example: "sonar-project.properties"
-		filename = myPrompter.scanIt("filename");
+		projectName = myPrompter.scanIt(" the projectName");
 		// Example: ./SonarQubeWork/src
-		source = myPrompter.scanIt("source");
+		source = myPrompter.scanIt(" the source of the files you wish to scan");
 
 	}
 
