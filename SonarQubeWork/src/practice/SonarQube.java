@@ -23,15 +23,15 @@ public class SonarQube {
 	 */
 	public static void myValues() {
 		Prompter myPrompter = new Prompter();
-		// Example: "C:\\Users\\fz3\\SonarQube\\TheClone"
+		// Example: C:\\Users\\fz3\\SonarQube\\TheClone
 		localRepo = myPrompter.scanIt("local path for cloned repository");
-		// Example: "https://github.com/Cruziken/SonarQube-Practice.git"
+		// Example: https://github.com/Cruziken/SonarQube-Practice.git
 		remoteRepo = myPrompter.scanIt("remote URL for remote repository");
-		// Example: sonarqubewoek
+		// Example: sonarqubework
 		projectName = myPrompter.scanIt(" the projectName");
 		// Example: ./SonarQubeWork/src
 		source = myPrompter.scanIt(" the source of the files you wish to scan");
-		
+
 		myPrompter.closeIt();
 
 	}
