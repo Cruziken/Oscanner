@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Prompter {
-	
+	private String values;
 	
 	public String scanIt(String value) {
 		System.out.println("Please enter the value for " + value + ".");
@@ -12,12 +12,12 @@ public class Prompter {
 		Scanner input = new Scanner(System.in);
 		while (input.hasNext()) {
 			// Creates a string out of Text found within file.
-			 value = input.nextLine();
+			 values = input.nextLine();
 			// Prints num string from past line
-			System.out.println(value);
+			
 		}
 		// Close input
 		input.close();
-		return value;
+		return values;
 	}
 }
