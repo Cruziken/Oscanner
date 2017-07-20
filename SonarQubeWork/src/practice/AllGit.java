@@ -91,7 +91,9 @@ public class AllGit {
 		// In case myfile is a dud...
 		try {
 			// Create the new file
-			myfile.createNewFile();
+			if (!myfile.createNewFile()) {
+				System.out.println("Bad stuff in addFile");
+			}
 			// Adds the new file to the localrepo
 			git.add().addFilepattern("/CruzCaliber.txt").call();
 
