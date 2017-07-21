@@ -28,9 +28,9 @@ public class SonarQube {
 		// Example: https://github.com/Cruziken/SonarQube-Practice.git
 		remoteRepo = myPrompter.scanIt("remote URL for remote repository");
 		// Example: sonarqubework
-		projectName = myPrompter.scanIt(" the projectName");
+		projectName = myPrompter.scanIt(" the name of the project.");
 		// Example: ./SonarQubeWork/src
-		source = myPrompter.scanIt(" the source of the files you wish to scan");
+		source = myPrompter.scanIt(" the source of the files you wish to scan. Should be path one level above files that you wish to scan.");
 		//closes the scanner
 		myPrompter.closeIt();
 
