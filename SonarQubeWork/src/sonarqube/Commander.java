@@ -89,9 +89,12 @@ public class Commander {
 			while ((line = br.readLine()) != null) {
 				// Prints off the content the BufferedReader gives
 				System.out.println(line);
+				//Zero means fail, anything else means successs
 				int exitValue = process.waitFor();
+				//Prints out success or failure
 				System.out.println("\n\nExit Value is " + exitValue);
 			}
+			//Closes the buffered reader
 			br.close();
 		}
 		// ...print the followng statement if something goes wrong
