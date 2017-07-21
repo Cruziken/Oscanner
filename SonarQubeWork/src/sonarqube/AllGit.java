@@ -1,4 +1,4 @@
-package practice;
+package sonarqube;
 
 import java.io.File;
 import java.io.IOException;

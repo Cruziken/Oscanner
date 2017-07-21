@@ -1,4 +1,4 @@
-package practice;
+package sonarqube;
 
 /**
  * This main method starts the program

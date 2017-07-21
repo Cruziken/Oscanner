@@ -1,4 +1,4 @@
-package practice;
+package sonarqube;
 
 import java.io.BufferedWriter;
 import java.io.File;

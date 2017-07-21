@@ -1,4 +1,4 @@
-package practice;
+package sonarqube;
 
 import java.util.Scanner;
 
