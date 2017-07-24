@@ -54,7 +54,7 @@ public class SonarQube {
 		// Creates an instance of Variables called myVariables
 		Variables myVariables = new Variables();
 		// Calls the sonarVars method on myVariables. This sets the directory
-		// that we will send from
+		// that we will send from and tells where the sonar-scanner location
 		myVariables.sonarVars(localRepo, sonarOS);
 		// Calls the fileVars method on myVariables. Sets the contents of the
 		// properties file
