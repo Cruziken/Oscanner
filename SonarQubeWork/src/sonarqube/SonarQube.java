@@ -23,6 +23,7 @@ public class SonarQube {
 	/**
 	 * This method starts the process
 	 */
+	/*
 	public static void myValues() {
 		Prompter myPrompter = new Prompter();
 		// Prompts the user for the Pathname to the sonar scanner. Ex;
@@ -40,7 +41,7 @@ public class SonarQube {
 		// closes the scanner
 		myPrompter.closeIt();
 
-	}
+	} */
 
 	public static void startIt() {
 		// Creates an instance of AllGit and passes the localpath and the remote
@@ -78,7 +79,12 @@ public class SonarQube {
 	 */
 	public static void main(String[] args) {
 		// Calls the startIt() method
-		myValues();
+		//myValues();
+		localRepo = args[0];
+		remoteRepo = args[1];
+		projectName = args[2];
+		sonarOS = args[3];
+		source = args[4];
 		startIt();
 	}
 }
