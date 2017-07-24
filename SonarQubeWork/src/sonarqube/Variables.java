@@ -16,9 +16,9 @@ public class Variables {
 	 * This method contains the commands and directory values to run through
 	 * command prompt
 	 */
-	public void sonarVars(String localRepoValue) {
+	public void sonarVars(String localRepoValue, String sonarOS) {
 		// Must pass this in at some point
-		startDirectory = "C:\\Users\\fz3\\SonarQube\\sonarqube-6.4\\sonarqube-6.4\\bin\\windows-x86-64";
+		startDirectory = sonarOS;
 		// Must pass this in at some point
 		fileSendDirectory = localRepoValue;
 		// This is always this

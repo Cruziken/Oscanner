@@ -13,6 +13,8 @@ public class SonarQube {
 	private static String remoteRepo = null;
 	// This is projectName for the project
 	private static String projectName = null;
+	//Pathname that houses the sonar scanner
+	private static String sonarOS = null;
 	// This is the name of the properties file. Should not change
 	private static final String filename = "sonar-project.properties";
 	// This is the name of the source in the project
@@ -23,6 +25,8 @@ public class SonarQube {
 	 */
 	public static void myValues() {
 		Prompter myPrompter = new Prompter();
+		//Prompts the user for the Pathname to the sonar scanner. Ex; "C:\\Users\\fz3\\SonarQube\\sonarqube-6.4\\sonarqube-6.4\\bin\\windows-x86-64";
+		sonarOS = myPrompter.scanIt("the path to sonar scanner.");
 		// Example: C:\\Users\\fz3\\SonarQube\\TheClone
 		localRepo = myPrompter.scanIt("local path for cloned repository");
 		// Example: https://github.com/Cruziken/SonarQube-Practice.git
@@ -51,7 +55,7 @@ public class SonarQube {
 		Variables myVariables = new Variables();
 		// Calls the sonarVars method on myVariables. This sets the directory
 		// that we will send from
-		myVariables.sonarVars(localRepo);
+		myVariables.sonarVars(localRepo, sonarOS);
 		// Calls the fileVars method on myVariables. Sets the contents of the
 		// properties file
 		myVariables.fileVars(projectName, source);
