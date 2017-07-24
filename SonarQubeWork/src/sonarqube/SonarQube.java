@@ -13,7 +13,7 @@ public class SonarQube {
 	private static String remoteRepo = null;
 	// This is projectName for the project
 	private static String projectName = null;
-	//Pathname that houses the sonar scanner
+	// Pathname that houses the sonar scanner
 	private static String sonarOS = null;
 	// This is the name of the properties file. Should not change
 	private static final String filename = "sonar-project.properties";
@@ -25,7 +25,8 @@ public class SonarQube {
 	 */
 	public static void myValues() {
 		Prompter myPrompter = new Prompter();
-		//Prompts the user for the Pathname to the sonar scanner. Ex; "C:\\Users\\fz3\\SonarQube\\sonarqube-6.4\\sonarqube-6.4\\bin\\windows-x86-64";
+		// Prompts the user for the Pathname to the sonar scanner. Ex;
+		// "C:\\Users\\fz3\\SonarQube\\sonarqube-6.4\\sonarqube-6.4\\bin\\windows-x86-64";
 		sonarOS = myPrompter.scanIt("the path to sonar scanner.");
 		// Example: C:\\Users\\fz3\\SonarQube\\TheClone
 		localRepo = myPrompter.scanIt("local path for cloned repository");
@@ -34,8 +35,9 @@ public class SonarQube {
 		// Example: sonarqubework
 		projectName = myPrompter.scanIt(" the name of the project.");
 		// Example: ./SonarQubeWork/src
-		source = myPrompter.scanIt(" the source of the files you wish to scan. Should be path one level above files that you wish to scan.");
-		//closes the scanner
+		source = myPrompter.scanIt(
+				" the source of the files you wish to scan. Should be path one level above files that you wish to scan.");
+		// closes the scanner
 		myPrompter.closeIt();
 
 	}
