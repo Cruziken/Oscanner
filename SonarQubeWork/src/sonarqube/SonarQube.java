@@ -75,16 +75,16 @@ public class SonarQube {
 	/**
 	 * The main method is where the program looks to begin
 	 * 
-	 * @param args
+	 * @param path
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] path) {
 		// Calls the startIt() method
 		//myValues();
-		localRepo = args[0];
-		remoteRepo = args[1];
-		projectName = args[2];
-		sonarOS = args[3];
-		source = args[4];
+		localRepo = path[0];
+		remoteRepo = path[1];
+		projectName = path[2];
+		sonarOS = path[3];
+		source = path[4];
 		startIt();
 	}
 }

@@ -42,7 +42,9 @@ public class Commander {
 	 * This method runs commands through command prompt
 	 */
 	public void commandPrompt() {
+		
 		// Creates this OS specific command. In this case it is windows
+		
 		String[] command = { "CMD", "/C", commands };
 		// Creates an instance of ProcessBuilder called probuilder given the
 		// command

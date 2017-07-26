@@ -10,14 +10,16 @@ import java.util.Arrays;
 
 
 public class StartSonar {
-	private static String startDirectory = "C:\\Users\\fz3\\SonarQube\\sonarqube-6.4\\sonarqube-6.4\\bin\\windows-x86-64";
-	private static String startCommand = "StartSonar.bat";
+	
+	private static String startDirectory;// "C:\\Users\\fz3\\SonarQube\\sonarqube-6.4\\sonarqube-6.4\\bin\\windows-x86-64";
+	private static String startCommand; //"StartSonar.bat";
 	private Process process;
 	
 	public static void main (String[] args) {
 
 		// Prints out the commands
-		System.out.println(startCommand);
+		startCommand = args[0];
+		startDirectory = args[1];
 		// Prints out the directory
 		System.out.println(startDirectory);
 		StartSonar myStartSonar = new StartSonar();
