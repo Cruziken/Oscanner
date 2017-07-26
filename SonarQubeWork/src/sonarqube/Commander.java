@@ -42,24 +42,31 @@ public class Commander {
 	 * This method runs commands through command prompt
 	 */
 	public void commandPrompt() {
-		
-		// Creates this OS specific command. In this case it is windows
-		
-		String[] command = { "CMD", "/C", commands };
-		// Creates an instance of ProcessBuilder called probuilder given the
-		// command
-		ProcessBuilder probuilder = new ProcessBuilder(command);
-		// Redirects errosStream to eclipse console
-		probuilder.redirectErrorStream(true);
-		// You can set up your work directory
-		// How to get path from working directory
-		probuilder.directory(new File(directory));
-		// In case process is a dud
+		ProcessBuilder probuilder = null;
+		String os = System.getProperty("os.name");
+		String[] theCommand = null;
+		if (os == "Windows 10") {
+			String[] commandW = { "CMD", "/C", commands };
+			// Creates an instance of ProcessBuilder called probuilder given the
+			// command
+			probuilder = new ProcessBuilder(commandW);
+			// Redirects errosStream to eclipse console
+			probuilder.redirectErrorStream(true);
+			// You can set up your work directory
+			// How to get path from working directory
+			probuilder.directory(new File(directory));
+			theCommand = commandW;
+		} else {
+			String[] commandL = { directory, commands };
+			probuilder = new ProcessBuilder(commandL);
+			theCommand = commandL;
+		}
+
 		try {
 			// Starts the process
 			process = probuilder.start();
 			// Sends command to sendToConsolemethod
-			sendToConsole(command);
+			sendToConsole(theCommand);
 		}
 		// ..print off the following statement
 		catch (IOException e2) {
@@ -91,12 +98,12 @@ public class Commander {
 			while ((line = br.readLine()) != null) {
 				// Prints off the content the BufferedReader gives
 				System.out.println(line);
-				//Zero means fail, anything else means successs
+				// Zero means fail, anything else means successs
 				int exitValue = process.waitFor();
-				//Prints out success or failure
+				// Prints out success or failure
 				System.out.println("\n\nExit Value is " + exitValue);
 			}
-			//Closes the buffered reader
+			// Closes the buffered reader
 			br.close();
 		}
 		// ...print the followng statement if something goes wrong
