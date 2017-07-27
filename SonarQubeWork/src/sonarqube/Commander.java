@@ -21,16 +21,19 @@ public class Commander {
 	 * calls to get command and directory to start SonarQube for Variables
 	 */
 	public void setVars(Variables myVari) {
+		// Creates a string that takes the value of the operating system's name
+		String os = System.getProperty("os.name");
 
-		// Calls the sonarVars to get acces to its methods
-		// myVari.sonarVars();
-		// gets the commands it needs from Variables
-		// commands = myVari.getStartCommand();
-		// gets the directory to start commands from
-		// directory = myVari.getStartDirectory();
-		// gets the commands it needs from Variables
-		commands = myVari.getSendCommand();
-		// gets the directory to start commands from
+		if (os.equals("Windows 10")) {
+			// Prints out correct commands for windows
+			commands = myVari.getSendCommandWindows();
+			// gets the directory to start commands from
+			System.out.println("commands");
+		} else {
+			// Prints out the correct commands for linux
+			commands = myVari.getSendCommandLinux();
+		}
+		// Directory is linux or windows depending on what the user passes
 		directory = myVari.getFileSendDirectory();
 		// Prints out the commands
 		System.out.println(commands);
@@ -42,27 +45,40 @@ public class Commander {
 	 * This method runs commands through command prompt
 	 */
 	public void commandPrompt() {
+		// Creates an instance of ProcessBuilder called probuilder
 		ProcessBuilder probuilder = null;
+		// Creates a string called os that calls for the property name
 		String os = System.getProperty("os.name");
+		// Creates an instance of an array of strings called theCommand
 		String[] theCommand = null;
-		if (os == "Windows 10") {
-			String[] commandW = { "CMD", "/C", commands };
-			// Creates an instance of ProcessBuilder called probuilder given the
-			// command
-			probuilder = new ProcessBuilder(commandW);
-			// Redirects errosStream to eclipse console
-			probuilder.redirectErrorStream(true);
-			// You can set up your work directory
-			// How to get path from working directory
-			probuilder.directory(new File(directory));
-			theCommand = commandW;
-		} else {
-			String[] commandL = { directory, commands };
-			probuilder = new ProcessBuilder(commandL);
-			theCommand = commandL;
+		// If the computer is Windows 10 OS...
+		if (os.equals("Windows 10")) {
+			// Creates an array of strings called commandW that takes command
+			// specific to windows
+			String[] theCommandW = { "CMD", "/C", commands };
+			//Sets theCommand equal to theCommandW
+			theCommand = theCommandW;
+		} 
+		//If its Linux or Mac
+		else {
+			//Creates an array of strings called theCommandL that takes commands specific to linux
+			String[] theCommandL = { "/bin/bash", "-c", commands };
+			//Sets theCommand equal to theCommandW
+			theCommand = theCommandL;
 		}
+		// Creates an instance of ProcessBuilder called probuilder given the
+		// command
+		probuilder = new ProcessBuilder(theCommand);
+		// Redirects errosStream to eclipse console
+		probuilder.redirectErrorStream(true);
+		// You can set up your work directory
+		// How to get path from working directory
+		probuilder.directory(new File(directory));
+		// Sets theCommand equal to the command output on windows
 
-		try {
+		try
+
+		{
 			// Starts the process
 			process = probuilder.start();
 			// Sends command to sendToConsolemethod
@@ -71,7 +87,7 @@ public class Commander {
 		// ..print off the following statement
 		catch (IOException e2) {
 			// Inform that error ocurred here
-			System.out.println("Something happened in ");
+			System.out.println("Something happened in Commander commandPrompt");
 		}
 	}
 
