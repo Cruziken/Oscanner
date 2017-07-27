@@ -7,45 +7,28 @@ package sonarqube;
  *
  */
 public class SonarQube {
-	// This is the localpath where the remote Repository will be cloned to
+	// This is the localpath where the remote Repository will be cloned
+	// to.Examples: C:\\Users\\fz3\\SonarQube\\TheClone on Windows and
+	// /home/mint/Programs/TheClone on linux
 	private static String localRepo = null;
-	// This is the remoteRepo URL; what will be cloned
+	// This is the remoteRepo URL; what will be cloned. Example:
+	// https:://github.com/Cruziken/SonarQube-Practice.git
 	private static String remoteRepo = null;
-	// This is projectName for the project
+	// This is projectName for the project. sonarTest
 	private static String projectName = null;
-	// Pathname that houses the sonar scanner
+	// Pathname that houses the sonar scanner. If you want to start it.
+	// Example:C:\\Users\\fz3\\SonarQube\\sonarqube-6.4\\sonarqube-6.4\\bin\\windows-x86-64
+	// or /etc/sonarqube-6.4\\bin\\linux-x86-32
 	private static String sonarOS = null;
 	// This is the name of the properties file. Should not change
 	private static final String filename = "sonar-project.properties";
-	// This is the name of the source in the project
+	// This is the name of the source in the project. For example . or ./src or
+	// ./SonarQubeWork/src
 	private static String source = null;
-
-	/**
-	 * This method starts the process
-	 */
-	/*
-	public static void myValues() {
-		Prompter myPrompter = new Prompter();
-		// Prompts the user for the Pathname to the sonar scanner. Ex;
-		// "C:\\Users\\fz3\\SonarQube\\sonarqube-6.4\\sonarqube-6.4\\bin\\windows-x86-64";
-		sonarOS = myPrompter.scanIt("the path to sonar scanner.");
-		// Example: C:\\Users\\fz3\\SonarQube\\TheClone
-		localRepo = myPrompter.scanIt("local path for cloned repository");
-		// Example: https://github.com/Cruziken/SonarQube-Practice.git
-		remoteRepo = myPrompter.scanIt("remote URL for remote repository");
-		// Example: sonarqubework
-		projectName = myPrompter.scanIt(" the name of the project.");
-		// Example: ./SonarQubeWork/src
-		source = myPrompter.scanIt(
-				" the source of the files you wish to scan. Should be path one level above files that you wish to scan.");
-		// closes the scanner
-		myPrompter.closeIt();
-
-	} */
 
 	public static void startIt() {
 		// Creates an instance of AllGit and passes the localpath and the remote
-		// URL to it
+		// UR. to it
 		AllGit myAllGit = new AllGit(localRepo, remoteRepo);
 		// Creates a clone in localpath location of remote repository
 		myAllGit.createClone();
@@ -79,7 +62,7 @@ public class SonarQube {
 	 */
 	public static void main(String[] path) {
 		// Calls the startIt() method
-		//myValues();
+		// myValues();
 		localRepo = path[0];
 		remoteRepo = path[1];
 		projectName = path[2];
@@ -88,3 +71,4 @@ public class SonarQube {
 		startIt();
 	}
 }
+
