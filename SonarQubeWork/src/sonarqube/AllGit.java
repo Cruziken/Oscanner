@@ -19,7 +19,7 @@ public class AllGit {
 
 	/**
 	 * This method Initializes the localPath and remotePath variables, the
-	 * localRepo, and the Git instance
+	 * localRepo, and this Git instance
 	 */
 
 	public AllGit(String localPathValue, String remotePathValue) {
