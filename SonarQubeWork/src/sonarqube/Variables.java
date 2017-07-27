@@ -10,7 +10,8 @@ public class Variables {
 	// Creates String variables concerned with sonar-properties file
 	private String keyDescript, projKey, otherDescript, projName, projVersion, projSource;
 	// Creates String variables concerned with command prompt commands
-	private String startDirectory, fileSendDirectory, startCommand, sendCommand;
+	private String startDirectory, fileSendDirectory, startCommandWindows, startCommandLinux, sendCommandLinux,
+			sendCommandWindows;
 
 	/**
 	 * This method contains the commands and directory values to run through
@@ -21,10 +22,14 @@ public class Variables {
 		startDirectory = sonarOS;
 		// Must pass this in at some point
 		fileSendDirectory = localRepoValue;
+		// this is always this if you save it right
+		startCommandLinux = "/etc/sonarqube-6.4/bin/linux-x86-64/";
 		// This is always this
-		startCommand = "StartSonar.bat";
-		// This is always this
-		sendCommand = "sonar-scanner";
+		startCommandWindows = "StartSonar.bat";
+		// This is always this if you save it right
+		sendCommandLinux = "/etc/sonar-scanner-3.0.3.778/bin/./sonar-scanner";
+		//This is this
+		sendCommandWindows = "sonar-scanner";
 	}
 
 	/**
@@ -131,18 +136,30 @@ public class Variables {
 	 * 
 	 * @return
 	 */
-	public String getStartCommand() {
+	public String getStartCommandLinux() {
 		// returns startCommand
-		return startCommand;
+		return startCommandLinux;
+	}
+	/**
+	 * this method returns the value of starCommandWindows
+	 * @return
+	 */
+	public String getStartCommandWindows() {
+		//returns startCommandWindows
+		return startCommandWindows;
+	}
+
+	public String getSendCommandWindows() {
+		return sendCommandWindows;
 	}
 
 	/**
-	 * This method returns the value of sendCommand
+	 * This method returns the value of sendCommandLinux
 	 * 
 	 * @return
 	 */
-	public String getSendCommand() {
-		// returns sendCommand
-		return sendCommand;
+	public String getSendCommandLinux() {
+		// returns sendCommandLinux
+		return sendCommandLinux;
 	}
 }
