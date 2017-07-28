@@ -16,10 +16,6 @@ public class SonarQube {
 	private static String remoteRepo = null;
 	// This is projectName for the project. sonarTest
 	private static String projectName = null;
-	// Pathname that houses the sonar scanner. If you want to start it.
-	// Example:C:\\Users\\fz3\\SonarQube\\sonarqube-6.4\\sonarqube-6.4\\bin\\windows-x86-64
-	// or /etc/sonarqube-6.4\\bin\\linux-x86-32
-	private static String sonarOS = null;
 	// This is the name of the properties file. Should not change
 	private static final String filename = "sonar-project.properties";
 	// This is the name of the source in the project. For example . or ./src or
