@@ -23,13 +23,13 @@ public class Variables {
 		// Must pass this in at some point
 		fileSendDirectory = localRepoValue;
 		// this is always this if you save it right
-		startCommandLinux = "/etc/sonarqube-6.4/bin/linux-x86-64/";
+		startCommandLinux = "./sonar.sh console";
 		// This is always this
 		startCommandWindows = "StartSonar.bat";
 		// This is always this if you save it right
 		sendCommandLinux = "/etc/sonar-scanner-3.0.3.778/bin/./sonar-scanner";
 		//This is this
-		sendCommandWindows = "sonar-scanner";
+		sendCommandWindows = "C:\\Users\\sonar-scanner\\bin\\sonar-scanner";
 	}
 
 	/**
