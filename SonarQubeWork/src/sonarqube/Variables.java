@@ -18,12 +18,9 @@ public class Variables {
 	 * command prompt
 	 */
 	public void sonarVars(String localRepoValue, String sonarOS) {
-		// Must pass this in at some point
-		startDirectory = sonarOS;
+		
 		// Must pass this in at some point
 		fileSendDirectory = localRepoValue;
-		// this is always this if you save it right
-		startCommandLinux = "./sonar.sh console";
 		// This is always this
 		startCommandWindows = "StartSonar.bat";
 		// This is always this if you save it right
