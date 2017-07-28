@@ -17,7 +17,7 @@ public class Variables {
 	 * This method contains the commands and directory values to run through
 	 * command prompt
 	 */
-	public void sonarVars(String localRepoValue, String sonarOS) {
+	public void sonarVars(String localRepoValue) {
 		
 		// Must pass this in at some point
 		fileSendDirectory = localRepoValue;
