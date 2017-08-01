@@ -15,7 +15,7 @@ To pass a package, start from the directory of the program you want to send to g
 <h2>Running the program using code on SonarQube-Practice</h2>
 <p>The benefit of using this code is that you don't have to create a sonar-porject.properties file every time you want to pass code and that you can send code directly from you repository to the SonarQube Server. Clone and copy the source code and run in an IDE such as Eclipse, <a href = "http://www.cs.colostate.edu/helpdocs/eclipseCommLineArgs.html"> editing the Run-Time agruments as needed </a> or run through shell of os using <a href = "https://github.com/Cruziken/SonarQube-Practice/tree/master/SonarQubeWork/src/sonarqube"> sonarqube.jar file </a>. For Windows and Linux change directories in shell to where the sonarqube.jar file is, and then type, </br>
 "java -jar sonarqube.jar (Path to file that is your remote repo clone) (The remote repository you are cloning from) (name of the project) (path to the files within repository you want to send. Typing "." is a good bet if you just want it all scanned)". Of course, this only works if you have started the SonarQube server already. </p>
-<Running it All Using Docker>
+<h2>Running it All Using Docker</h2>
 <h2> Running by synchronizing project to virtual machine</h2>
 
 <h2>Gaining access to server</h2>
