@@ -1,5 +1,8 @@
 package sonarqube;
 
+import java.io.File;
+import java.util.List;
+
 /**
  * This main method starts the program
  * 
@@ -21,23 +24,36 @@ public class Oscanner {
 	// This is the name of the source in the project. For example . or ./src or
 	// ./SonarQubeWork/src
 	private static String source = null;
+	private static List<String> subPaths= null;
 
+	           
+	
 	public static void startIt() {
 		// Creates an instance of AllGit and passes the localpath and the remote
 		// UR. to it
+		
 		AllGit myAllGit = new AllGit(localRepo, remoteRepo);
-		// Creates a clone in localpath location of remote repository
 		myAllGit.createClone();
+		
+		DirectoryScanner myDirScan = new DirectoryScanner(localRepo);
+		subPaths = myDirScan.getSubPaths();
+			for (int i=0;i < 3;i++){
+		String life = subPaths.get(0);
+		System.out.println(life);
 		// Creates an instance of PropsWriter and passes the filename and
 		// localRepo variables through it
-		PropsWriter myPropsWriter = new PropsWriter(filename, localRepo);
+		
+		// Creates a clone in localpath location of remote repository
+		
+		PropsWriter myPropsWriter = new PropsWriter(filename, (localRepo +life));
 		// Creates an instance of Commander called myCommander
 		Commander myCommander = new Commander();
 		// Creates an instance of Variables called myVariables
 		Variables myVariables = new Variables();
+		
 		// Calls the sonarVars method on myVariables. This sets the directory
 		// that we will send from and tells where the sonar-scanner location
-		myVariables.sonarVars(localRepo);
+		myVariables.sonarVars((localRepo + life));
 		// Calls the fileVars method on myVariables. Sets the contents of the
 		// properties file
 		myVariables.fileVars(projectName, source);
@@ -47,9 +63,10 @@ public class Oscanner {
 		myCommander.setVars(myVariables);
 		// Calls the commandPrompt on myCommander. In this case, this sends the
 		// repo to the sonarqube scanner
-		myCommander.commandPrompt();
-
+		myCommander.commandPrompt();}
 	}
+
+
 
 	/**
 	 * The main method is where the program looks to begin
@@ -66,4 +83,5 @@ public class Oscanner {
 		startIt();
 	}
 }
+
 
