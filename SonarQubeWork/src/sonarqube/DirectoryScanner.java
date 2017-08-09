@@ -10,6 +10,7 @@ import java.util.List;
 				private static int numOfSubfolders;
 				private static String directPath;
 				private static List<String> subPaths;
+				 private static List<String> subPathFake;
 				//public static void listFilesForFolder(final File folder) {
 				  /*  for (final File fileEntry : folder.listFiles()) {
 				        if (fileEntry.isDirectory()) {
@@ -25,7 +26,7 @@ import java.util.List;
 				public DirectoryScanner(String directPather){
 					 //directPath = "C:\\Users\\fz3\\workspace";
 					directPath=directPather;
-					 listFolders(directPath);
+					 listFolders();
 				}
 				public void doSB(String content){
 					StringBuilder sb = new StringBuilder();
@@ -36,20 +37,27 @@ import java.util.List;
 						sb.append(i);
 					}
 				}
-				 public static List<String> listFolders(String directpath){
-					 File directory = new File(directpath);
+				 public List<String> listFolders(){
+					 File directory = new File(directPath);
 				        //get all the files from a directory
 				        File[] fList = directory.listFiles();
-				        
+				        subPathFake = new ArrayList<String>();
 				        for (File file : fList){
-				        	
 				            if (file.isDirectory()){
 				            	 dirContent= file.getName();
-				            	 List<String> subPathFake = new ArrayList<String>();
+				            	// System.out.println(dirContent);
+				            	// while (dirContent!=null){
+				            	 //arrayIt(dirContent);
 				            	 subPathFake.add(dirContent);
-				            	 arrayIt(subPathFake);
+				            	// System.out.println(subPathFake.size());
+				          
+				            	// }
 				            	}
-				           // return dirContent;
+				          //  System.out.println(subPathFake.size());
+				            
+				           
+				            
+				         
 				        }
 				        
 				     
@@ -59,8 +67,7 @@ import java.util.List;
 				       // return dirContent;
 						System.out.println("I am here");
 						//System.out.println(dirContent);
-				        return subPaths;
-				            	 }
+						return subPathFake;}
 				 public <T> List<T> magicalListGetter() {
 					    return new ArrayList<T>();
 					}    
