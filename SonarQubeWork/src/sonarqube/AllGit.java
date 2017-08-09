@@ -8,6 +8,11 @@ import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.internal.storage.file.FileRepository;
 import org.eclipse.jgit.lib.Repository;
 
+/**
+ * 
+ * This class handles most Git related commands with JGit
+ *
+ */
 public class AllGit {
 	// Creates a localPath String (where and what the local when will be called)
 	// and a remotePath String(which repository I'm getting it from
@@ -92,7 +97,7 @@ public class AllGit {
 		try {
 			// Create the new file
 			if (!myfile.createNewFile()) {
-				//Prints this out if new file is not created
+				// Prints this out if new file is not created
 				System.out.println("Bad stuff in addFile");
 			}
 			// Adds the new file to the localrepo
@@ -182,4 +187,3 @@ public class AllGit {
 		localRepo.close();
 	}
 }
-

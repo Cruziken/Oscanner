@@ -6,7 +6,6 @@ import java.util.List;
  * This class contains the main method that starts the program and the recipe
  * of events that take place
  * 
- * @author fz3
  *
  */
 public class Oscanner {

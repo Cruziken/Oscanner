@@ -3,7 +3,7 @@ package sonarqube;
 /**
  * This class is THE data class for this package
  * 
- * @author fz3
+ * 
  *
  */
 public class Variables {
