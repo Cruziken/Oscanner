@@ -18,7 +18,7 @@ public class Oscanner {
 	// https:://github.com/Cruziken/SonarQube-Practice.git
 	private static String remoteRepo = null;
 	// This is projectName for the project. sonarTest
-	private static String projectName = null;
+	//private static String projectName = null;
 	// This is the name of the properties file. Should not change
 	private static final String filename = "sonar-project.properties";
 	// This is the name of the source in the project. For example . or ./src or
@@ -36,16 +36,17 @@ public class Oscanner {
 		myAllGit.createClone();
 		
 		DirectoryScanner myDirScan = new DirectoryScanner(localRepo);
-		subPaths = myDirScan.getSubPaths();
-			for (int i=0;i < 3;i++){
-		String life = subPaths.get(0);
-		System.out.println(life);
+		subPaths = myDirScan.listFolders();
+			for (int i=0;i < subPaths.size();i++){
+		String sub = subPaths.get(i);
+		System.out.println(sub);
+		System.out.println(subPaths.size());
 		// Creates an instance of PropsWriter and passes the filename and
 		// localRepo variables through it
 		
 		// Creates a clone in localpath location of remote repository
 		
-		PropsWriter myPropsWriter = new PropsWriter(filename, (localRepo +life));
+		PropsWriter myPropsWriter = new PropsWriter(filename, (localRepo +sub));
 		// Creates an instance of Commander called myCommander
 		Commander myCommander = new Commander();
 		// Creates an instance of Variables called myVariables
@@ -53,10 +54,10 @@ public class Oscanner {
 		
 		// Calls the sonarVars method on myVariables. This sets the directory
 		// that we will send from and tells where the sonar-scanner location
-		myVariables.sonarVars((localRepo + life));
+		myVariables.sonarVars((localRepo + sub));
 		// Calls the fileVars method on myVariables. Sets the contents of the
 		// properties file
-		myVariables.fileVars(projectName, source);
+		myVariables.fileVars(sub, source);
 		// Gets the values from Varibles to print to the properties file
 		myPropsWriter.propsVars(myVariables);
 		// Gets the directory and command from myVariables class
@@ -78,10 +79,9 @@ public class Oscanner {
 		// myValues();
 		localRepo = path[0];
 		remoteRepo = path[1];
-		projectName = path[2];
-		source = path[3];
+		//projectName = path[2];
+		source = path[2];
 		startIt();
 	}
 }
-
 
