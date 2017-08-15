@@ -2,12 +2,8 @@ package sonarqube;
 
 import java.io.BufferedWriter;
 import java.io.File;
-/*import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;*/
 import java.io.FileWriter;
 import java.io.IOException;
-//import java.util.Properties;
 
 /**
  * This method writes content passed to it to a file
