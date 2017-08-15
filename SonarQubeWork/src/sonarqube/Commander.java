@@ -15,6 +15,7 @@ public class Commander {
 	private Process process;
 	// Creates String variables commands and directory
 	private String commands, directory;
+	private String os;
 
 	/**
 	 * This method sets the Variables. Note that commented out section contain
@@ -22,7 +23,7 @@ public class Commander {
 	 */
 	public void setVars(Variables myVari) {
 		// Creates a string that takes the value of the operating system's name
-		String os = System.getProperty("os.name");
+		 os = System.getProperty("os.name");
 
 		if (os.equals("Windows 10")) {
 			// Prints out correct commands for windows
@@ -48,7 +49,7 @@ public class Commander {
 		// Creates an instance of ProcessBuilder called probuilder
 		ProcessBuilder probuilder = null;
 		// Creates a string called os that calls for the property name
-		String os = System.getProperty("os.name");
+		 os = System.getProperty("os.name");
 		// Creates an instance of an array of strings called theCommand
 		String[] theCommand = null;
 		// If the computer is Windows 10 OS...
