@@ -8,7 +8,7 @@ package sonarqube;
  */
 public class Variables {
 	// Creates String variables concerned with sonar-properties file
-	private String keyDescript, projKey, otherDescript, projName, projVersion, projSource;
+	private String keyDescript, projKey, otherDescript, projName, projVersion, projSource, projBin;
 	// Creates String variables concerned with command prompt commands
 	private String startDirectory, fileSendDirectory, startCommandWindows, startCommandLinux, sendCommandLinux,
 			sendCommandWindows;
@@ -26,7 +26,7 @@ public class Variables {
 		// This is always this if you save it right
 		sendCommandLinux = "/etc/sonar-scanner/bin/./sonar-scanner";
 		//This is this
-		sendCommandWindows = "C:\\Users\\sonar-scanner\\bin\\sonar-scanner";
+		sendCommandWindows = "C:\\Users\\b0c\\Desktop\\SonarQubeWork\\sonar-scanner\\bin\\sonar-scanner";
 	}
 
 	/**
@@ -46,6 +46,7 @@ public class Variables {
 		projVersion = "sonar.projectVersion=" + "1.0";
 		// Assigns the value of projSource
 		projSource = "sonar.sources=" + source;
+		setProjBin("sonar.java.binaries="+ source);
 	}
 
 	/**
@@ -159,4 +160,22 @@ public class Variables {
 		// returns sendCommandLinux
 		return sendCommandLinux;
 	}
+
+	/**
+	 * This method returns the value of startCommand
+	 * 
+	 * @return
+	 */
+	public void setProjBin(String projBin) {
+		this.projBin = projBin;
+	}
+	/**
+	 * This method returns the value of startCommand
+	 * 
+	 * @return
+	 */
+	public String getProjBin() {
+		return projBin;
+	}
 }
+
