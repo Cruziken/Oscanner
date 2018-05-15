@@ -63,6 +63,8 @@ public class PropsWriter {
 		String projVersion = myVars.getProjVersion();
 		// Gets the value assigned to projSource
 		String projSource = myVars.getProjSource();
+		// Gets projBin to be written to file
+		String projBin = myVars.getProjBin();
 		// Passes keyDescript to be written to file
 		propsWriter(keyDescript);
 		// Passes projKey to be written to file
@@ -75,6 +77,8 @@ public class PropsWriter {
 		propsWriter(projVersion);
 		// Passes projSource to be written to file
 		propsWriter(projSource);
+		// Passes projBin to be written to file
+		propsWriter(projBin);
 		// Close the FileWriter
 		closeIt();
 	}
@@ -122,3 +126,4 @@ public class PropsWriter {
 
 	}
 }
+
