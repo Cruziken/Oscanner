@@ -163,7 +163,7 @@ public class AllGit {
 		}
 	}
 
-	/**
+	/**   
 	 * Method pulls from remote repository
 	 */
 	public void testPull() {
